@@ -1,0 +1,365 @@
+*------------------------------------------------------------*
+User:                u59459348
+Date:                April 03, 2022
+Time:                18:32:16
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+          Measurement    Frequency
+ Role        Level         Count
+ 
+INPUT      NOMINAL           3
+TARGET     INTERVAL          1
+ 
+ 
+ 
+ 
+Predicted and decision variables
+ 
+Type         Variable           Label
+ 
+TARGET       balance
+PREDICTED    P_balance    Predicted: balance
+RESIDUAL     R_balance    Residual: balance
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+               Model Information
+ 
+Training Data Set             WORK.EM_DMREG.VIEW
+DMDB Catalog                  WORK.REG_DMDB
+Target Variable               balance
+Target Measurement Level      Interval
+Error                         Normal
+Link Function                 Identity
+Number of Model Parameters    7
+Number of Observations        5289
+ 
+ 
+ 
+ 
+Stepwise Selection Procedure
+ 
+ 
+Step 0: Intercept entered.
+ 
+ 
+                             Analysis of Variance
+ 
+                                   Sum of
+Source                 DF         Squares     Mean Square    F Value    Pr > F
+ 
+Model                   0               0               .        .       .
+Error                5288     46706407316         8832528
+Corrected Total      5288     46706407316
+ 
+ 
+              Model Fit Statistics
+ 
+R-Square        0.0000     Adj R-Sq        0.0000
+AIC         84593.0110     BIC         84594.9793
+SBC         84599.5844     C(p)           85.9133
+ 
+ 
+ 
+ 
+             Analysis of Maximum Likelihood Estimates
+ 
+                                   Standard
+Parameter        DF    Estimate       Error    t Value    Pr > |t|
+ 
+Intercept         1      1527.7     40.8654      37.38      <.0001
+ 
+ 
+Step 1: Effect loan entered.
+ 
+ 
+                             Analysis of Variance
+ 
+                                   Sum of
+Source                 DF         Squares     Mean Square    F Value    Pr > F
+ 
+Model                   1       323716568       323716568      36.90    <.0001
+Error                5287     46382690748         8772970
+Corrected Total      5288     46706407316
+ 
+ 
+              Model Fit Statistics
+ 
+R-Square        0.0069     Adj R-Sq        0.0067
+AIC         84558.2260     BIC         84560.1908
+SBC         84571.3728     C(p)           50.6743
+ 
+ 
+            Type 3 Analysis of Effects
+ 
+                        Sum of
+Effect        DF       Squares    F Value    Pr > F
+ 
+loan           1     323716568      36.90    <.0001
+ 
+ 
+             Analysis of Maximum Likelihood Estimates
+ 
+                                   Standard
+Parameter        DF    Estimate       Error    t Value    Pr > |t|
+ 
+Intercept         1       896.3       111.6       8.03      <.0001
+loan      no      1       728.3       119.9       6.07      <.0001
+loan      yes     0           0           .        .         .
+ 
+ 
+Step 2: Effect housing entered.
+ 
+ 
+                             Analysis of Variance
+ 
+                                   Sum of
+Source                 DF         Squares     Mean Square    F Value    Pr > F
+ 
+Model                   2       594687425       297343713      34.09    <.0001
+Error                5286     46111719890         8723367
+Corrected Total      5288     46706407316
+ 
+ 
+              Model Fit Statistics
+ 
+R-Square        0.0127     Adj R-Sq        0.0124
+AIC         84529.2367     BIC         84531.2191
+SBC         84548.9568     C(p)           21.5029
+ 
+ 
+            Type 3 Analysis of Effects
+ 
+                        Sum of
+Effect        DF       Squares    F Value    Pr > F
+ 
+housing        1     270970858      31.06    <.0001
+loan           1     273186662      31.32    <.0001
+ 
+ 
+             Analysis of Maximum Likelihood Estimates
+ 
+                                   Standard
+Parameter        DF    Estimate       Error    t Value    Pr > |t|
+ 
+Intercept         1       707.0       116.4       6.07      <.0001
+housing   no      1       454.9     81.6169       5.57      <.0001
+housing   yes     0           0           .        .         .
+loan      no      1       671.5       120.0       5.60      <.0001
+loan      yes     0           0           .        .         .
+ 
+ 
+Step 3: Effect default entered.
+ 
+ 
+                             Analysis of Variance
+ 
+                                   Sum of
+Source                 DF         Squares     Mean Square    F Value    Pr > F
+ 
+Model                   3       764224879       254741626      29.30    <.0001
+Error                5285     45942182437         8692939
+Corrected Total      5288     46706407316
+ 
+ 
+              Model Fit Statistics
+ 
+R-Square        0.0164     Adj R-Sq        0.0158
+AIC         84511.7549     BIC         84513.7610
+SBC         84538.0485     C(p)            4.0000
+ 
+ 
+            Type 3 Analysis of Effects
+ 
+                        Sum of
+Effect        DF       Squares    F Value    Pr > F
+ 
+default        1     169537453      19.50    <.0001
+housing        1     259126856      29.81    <.0001
+loan           1     247319006      28.45    <.0001
+ 
+ 
+             Analysis of Maximum Likelihood Estimates
+ 
+                                   Standard
+Parameter        DF    Estimate       Error    t Value    Pr > |t|
+ 
+Intercept         1      -717.8       342.9      -2.09      0.0364
+default   no      1      1479.4       335.0       4.42      <.0001
+default   yes     0           0           .        .         .
+housing   no      1       445.0     81.5052       5.46      <.0001
+housing   yes     0           0           .        .         .
+loan      no      1       640.0       120.0       5.33      <.0001
+loan      yes     0           0           .        .         .
+ 
+ 
+NOTE: All effects have been entered into the model.
+ 
+ 
+               Summary of Stepwise Selection
+ 
+            Effect             Number
+    Step    Entered      DF        In    F Value    Pr > F
+ 
+       1    loan          1         1      36.90    <.0001
+       2    housing       1         2      31.06    <.0001
+       3    default       1         3      19.50    <.0001
+ 
+ 
+The selected model is the model trained in the last step (Step 3). It consists of the following effects:
+ 
+Intercept  default  housing  loan
+ 
+ 
+                             Analysis of Variance
+ 
+                                   Sum of
+Source                 DF         Squares     Mean Square    F Value    Pr > F
+ 
+Model                   3       764224879       254741626      29.30    <.0001
+Error                5285     45942182437         8692939
+Corrected Total      5288     46706407316
+ 
+ 
+              Model Fit Statistics
+ 
+R-Square        0.0164     Adj R-Sq        0.0158
+AIC         84511.7549     BIC         84513.7610
+SBC         84538.0485     C(p)            4.0000
+ 
+ 
+            Type 3 Analysis of Effects
+ 
+                        Sum of
+Effect        DF       Squares    F Value    Pr > F
+ 
+default        1     169537453      19.50    <.0001
+housing        1     259126856      29.81    <.0001
+loan           1     247319006      28.45    <.0001
+ 
+ 
+             Analysis of Maximum Likelihood Estimates
+ 
+                                   Standard
+Parameter        DF    Estimate       Error    t Value    Pr > |t|
+ 
+Intercept         1      -717.8       342.9      -2.09      0.0364
+default   no      1      1479.4       335.0       4.42      <.0001
+default   yes     0           0           .        .         .
+housing   no      1       445.0     81.5052       5.46      <.0001
+housing   yes     0           0           .        .         .
+loan      no      1       640.0       120.0       5.33      <.0001
+loan      yes     0           0           .        .         .
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Fit Statistics
+ 
+Target=balance Target Label=' '
+ 
+   Fit
+Statistics    Statistics Label                           Train        Validation              Test
+ 
+ _AIC_        Akaike's Information Criterion          84511.75               .                 .
+ _ASE_        Average Squared Error                 8686364.61       11372749.61        9374263.66
+ _AVERR_      Average Error Function                8686364.61       11372749.61        9374263.66
+ _DFE_        Degrees of Freedom for Error             5285.00               .                 .
+ _DFM_        Model Degrees of Freedom                    4.00               .                 .
+ _DFT_        Total Degrees of Freedom                 5289.00               .                 .
+ _DIV_        Divisor for ASE                          5289.00           3173.00           2116.00
+ _ERR_        Error Function                    45942182437.12    36085734517.76    19835941904.18
+ _FPE_        Final Prediction Error                8699513.32               .                 .
+ _MAX_        Maximum Absolute Error                  50740.42          79357.42          43942.42
+ _MSE_        Mean Square Error                     8692938.97       11372749.61        9374263.66
+ _NOBS_       Sum of Frequencies                       5289.00           3173.00           2116.00
+ _NW_         Number of Estimate Weights                  4.00               .                 .
+ _RASE_       Root Average Sum of Squares              2947.26           3372.35           3061.74
+ _RFPE_       Root Final Prediction Error              2949.49               .                 .
+ _RMSE_       Root Mean Squared Error                  2948.38           3372.35           3061.74
+ _SBC_        Schwarz's Bayesian Criterion            84538.05               .                 .
+ _SSE_        Sum of Squared Errors             45942182437.12    36085734517.76    19835941904.18
+ _SUMW_       Sum of Case Weights Times Freq           5289.00           3173.00           2116.00
+ 
+ 
+ 
+ 
+Assessment Score Rankings
+ 
+Data Role=TRAIN Target Variable=balance Target Label=' '
+ 
+           Number of         Mean       Mean
+Depth    Observations      Target    Predicted
+ 
+   5         2465         1878.62      1846.58
+  50         2065         1368.78      1401.58
+  90          278          909.21      1206.55
+  95          402          939.19       761.55
+ 100           79          -97.63       -97.63
+ 
+ 
+Data Role=VALIDATE Target Variable=balance Target Label=' '
+ 
+           Number of       Mean         Mean
+Depth    Observations     Target     Predicted
+ 
+   5         1508         1968.19      1846.58
+  50         1260         1418.55      1401.58
+  90          142          663.54      1206.55
+  95          219          700.72       761.55
+ 100           44         -151.57       -31.12
+ 
+ 
+ 
+ 
+Assessment Score Distribution
+ 
+Data Role=TRAIN Target Variable=balance Target Label=' '
+ 
+                            Mean       Mean        Number of       Model
+Range for Predicted       Target    Predicted    Observations      Score
+ 
+1718.358 -  1846.579     1878.62      1846.58        2465         1782.47
+1333.695 -  1461.916     1368.78      1401.58        2065         1397.81
+1205.474 -  1333.695      909.21      1206.55         278         1269.58
+692.590 -  820.811        939.19       761.55         402          756.70
+307.927 -  436.148        -21.19       367.18          16          372.04
+-204.958 -  -76.737      -206.95       -77.81          39         -140.85
+-333.179 -  -204.958      386.07      -272.84          15         -269.07
+-717.842 -  -589.621     -566.00      -717.84           9         -653.73
+ 
+ 
+Data Role=VALIDATE Target Variable=balance Target Label=' '
+ 
+                            Mean       Mean        Number of       Model
+Range for Predicted       Target    Predicted    Observations      Score
+ 
+1718.358 -  1846.579     1968.19      1846.58        1508         1782.47
+1333.695 -  1461.916     1418.55      1401.58        1260         1397.81
+1205.474 -  1333.695      663.54      1206.55         142         1269.58
+692.590 -  820.811        700.72       761.55         219          756.70
+307.927 -  436.148         14.42       367.18          12          372.04
+-204.958 -  -76.737      -239.95       -77.81          22         -140.85
+-333.179 -  -204.958      -18.14      -272.84           7         -269.07
+-717.842 -  -589.621     -478.67      -717.84           3         -653.73
